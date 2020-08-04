@@ -22,19 +22,19 @@ pi@raspberry:~# ./transmission-pwgen.sh
 plain_text_password = EOsJAezYIlESfYJ2
 rpc_password_string = {93e2b099a0b96ed73bacc937f146826ed7f9b96a5VSE46DL
 ```
-Transmission must be stopped before adding the rpc_password_string into settings.json.
+**Transmission must be stopped before adding the rpc-password string into settings.json.**
 
 On Debian linux it works like this:
 
-1. Stop transmission:
+Stop transmission:
 ```
 sudo service transmission-daemon stop
 ```
-2. Edit `/etc/transmission-daemon/settings.json` and replace the rpc-password string:
+Edit `/etc/transmission-daemon/settings.json` and replace the rpc-password string:
 ```
 "rpc-password": "{93e2b099a0b96ed73bacc937f146826ed7f9b96a5VSE46DL",
 ```
-3. Start transmission:
+Start transmission:
 ```
 sudo service transmission-daemon start
 ```
