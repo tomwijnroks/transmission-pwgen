@@ -15,10 +15,9 @@ chmod +x transmission-pwgen.sh
 Execute `./transmission-pwgen.sh` to generate a password and rpc-password string.
 
 ## Example
-This is an example:
+Example output from transmission-pwgen:
 ```
 pi@raspberry:~# ./transmission-pwgen.sh
-
 plain_text_password = EOsJAezYIlESfYJ2
 rpc_password_string = {93e2b099a0b96ed73bacc937f146826ed7f9b96a5VSE46DL
 ```
