@@ -12,8 +12,8 @@ PASS=$(cat /dev/urandom | tr -dc '[:alnum:]' | fold -w ${PASSWORD_LENGTH} | head
 # Source: https://github.com/transmission/transmission/blob/master/libtransmission/crypto-utils.c#L132-L136
 SALT=$(cat /dev/urandom | tr -dc '[:alnum:]./' | fold -w 8 | head -n1)
 
-# Combine password + salt and use shasum (sha1) to create the hash.
-HASH=$(echo -n ${PASS}${SALT} | shasum -a1 | awk '{print $1}')
+# Combine password + salt and use sha1sum to create the hash.
+HASH=$(echo -n ${PASS}${SALT} | sha1sum | awk '{print $1}')
 
 # Print the plain text password.
 echo "plain_text_password = ${PASS}"
