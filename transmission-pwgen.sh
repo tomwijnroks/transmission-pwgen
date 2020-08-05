@@ -8,7 +8,7 @@ PASSWORD_LENGTH=16
 # Generate a random password (alphanumeric).
 PASS=$(cat /dev/urandom | tr -dc '[:alnum:]' | fold -w ${PASSWORD_LENGTH} | head -n1)
 
-# Generate a random salt (alphanumeric + two special chars).
+# Generate a random salt (alphanumeric + two special characters).
 # Source: https://github.com/transmission/transmission/blob/master/libtransmission/crypto-utils.c#L132-L136
 SALT=$(cat /dev/urandom | tr -dc '[:alnum:]./' | fold -w 8 | head -n1)
 
@@ -18,6 +18,6 @@ HASH=$(echo -n ${PASS}${SALT} | sha1sum | awk '{print $1}')
 # Print the plain text password.
 echo "plain_text_password = ${PASS}"
 
-# Print the rpc-password string and prepend it with a curly bracket.
+# Print the rpc-password string: hash + salt prepended with a curly bracket.
 # Source: https://github.com/transmission/transmission/blob/master/libtransmission/crypto-utils.c#L153
 echo "rpc_password_string = {${HASH}${SALT}"
