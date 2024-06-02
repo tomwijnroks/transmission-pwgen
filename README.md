@@ -7,12 +7,10 @@ The Transmission BitTorrent client uses a settings.json file where you can set a
 This script will generate a plain text password + the encrypted rpc-password string which can be used in the settings.json file.
 
 ## Usage
-Download transmission-pwgen and make it executable:
+Download and execute the script to generate a password and rpc-password string:
 ```
-curl -so transmission-pwgen.sh https://raw.githubusercontent.com/tomwijnroks/transmission-pwgen/master/transmission-pwgen.sh
-chmod +x transmission-pwgen.sh
+bash -c "$(wget -qLO - https://github.com/tomwijnroks/transmission-pwgen/raw/master/transmission-pwgen.sh)"
 ```
-Execute `./transmission-pwgen.sh` to generate a password and rpc-password string.
 
 ## Example
 Example output from transmission-pwgen:
