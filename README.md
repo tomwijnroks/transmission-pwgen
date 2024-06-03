@@ -9,7 +9,7 @@ This script will generate a plain text password + the encrypted rpc-password str
 ## Usage
 Download and execute the script to generate a password and rpc-password string:
 ```
-bash -c "$(wget -qLO - https://github.com/tomwijnroks/transmission-pwgen/raw/master/transmission-pwgen.sh)"
+curl -sL "https://github.com/tomwijnroks/transmission-pwgen/raw/master/transmission-pwgen.sh" | bash
 ```
 
 ## Example
